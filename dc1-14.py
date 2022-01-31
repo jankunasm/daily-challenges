@@ -62,3 +62,20 @@ def longestSub(s):
 		# keep moving forward to the next character, regardless
         right += 1
     return longest
+
+
+# Marquese Brown Solution
+
+def longest(s):
+    x = 0
+    count = 0
+    check = []
+    while(x < len(s)):
+        if s[x] in check:
+            if len(check) > count:
+                count = len(check)
+            check = []
+        else:
+            check.append(s[x])
+            x += 1
+    return count
